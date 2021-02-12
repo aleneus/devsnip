@@ -18,9 +18,10 @@ help:
 	@echo "po"
 	@echo "mo"
 	@echo "uml"
+	@echo "run-warn"
 
 check:
-	@nose2 vvv --with-coverage
+	@nose2 -vvv --with-coverage
 
 cover:
 	@nose2 --with-coverage --coverage-report=html
@@ -72,6 +73,9 @@ mo:
 	for f in $(LANG_FOLDER)/*.po; do \
 		msgfmt "$$f" -o "$${f%%.*}.mo"; \
 	done
+
+run-warn:
+	python3 -W all ./gui
 
 uml:
 	pyreverse3 $(PACKAGE_FOLDER) -o png
