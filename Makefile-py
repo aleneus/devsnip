@@ -7,10 +7,10 @@ LANG_FOLDER = __name_of_lang_folder_
 help:
 	@echo "check"
 	@echo "cover"
-	@echo "todo"
+	@echo "notes"
 	@echo "flake"
-	@echo "lint"
 	@echo "lint-e"
+	@echo "lint"
 	@echo "lint-demo"
 	@echo "ver"
 	@echo "upload"
@@ -26,20 +26,21 @@ check:
 cover:
 	@nose2 --with-coverage --coverage-report=html
 
-todo:
+notes:
 	@rgrep "TODO" --include="*py" --include="*md" --include="*rst" --exclude="release-checklist.md" || true
+	@rgrep "# REF" --include="*py" || true
 
 flake:
 	flake8 $(PACKAGE_FOLDER)
 
-lint:
-	pylint $(PACKAGE_FOLDER)
-
 lint-e:
-	pylint --disable=R,C,W $(PACKAGE_FOLDER)
+	pylint --disable=R,C,W $(PACKAGE_FOLDER) || true
+
+lint:
+	pylint $(PACKAGE_FOLDER) || true
 
 lint-demo:
-	pylint $(DEMO_FOLDER)
+	pylint $(DEMO_FOLDER) || true
 
 docs:
 	sphinx-build docs/source/ docs/build/

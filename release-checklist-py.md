@@ -8,7 +8,7 @@
 
 ## Code
 
-* No TODO notes: `make todo`
+* No TODO notes: `make notes`
 * No flakes: `make flake`
 * No lint errors: `make lint-e`
 * Lint result >= __: `make lint`
