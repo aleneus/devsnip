@@ -1,8 +1,8 @@
 .PHONY: docs
 
 PACKAGE_FOLDER = __name_of_package_folder__
+LANG_FOLDER = "$(PACKAGE_FOLDER)/__name_of_lang_subfolder_"
 DEMO_FOLDER = __name_of_demo_folder__
-LANG_FOLDER = __name_of_lang_folder_
 
 help:
 	@echo "check"
@@ -57,7 +57,7 @@ upload:
 	python3 -m twine upload --repository pypi dist/*
 
 po:
-	for f in $(PACKAGE)/*.py; do \
+	for f in $(PACKAGE_FOLDER)/*.py; do \
 		s=$${f##*/} ; \
 		fo=$(LANG_FOLDER)/$${s%%.*}.po ; \
 		if [ -f $$fo ] ; then \
