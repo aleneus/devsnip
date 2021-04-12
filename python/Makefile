@@ -9,6 +9,7 @@ help:
 	@echo "cover"
 	@echo "notes"
 	@echo "flake"
+	@echo "profile"
 	@echo "lint-e"
 	@echo "lint"
 	@echo "lint-demo"
@@ -32,6 +33,9 @@ notes:
 
 flake:
 	flake8 $(PACKAGE_FOLDER)
+
+profile:
+	python3 -m cProfile -s time ./gui
 
 lint-e:
 	pylint --disable=R,C,W $(PACKAGE_FOLDER) || true
