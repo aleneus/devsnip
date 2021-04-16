@@ -7,3 +7,8 @@ Typical project files useful for development
 * Makefile
 * Release checklist
 * Setup and build scripts
+* Snippets
+
+## Go
+
+* Snippets
