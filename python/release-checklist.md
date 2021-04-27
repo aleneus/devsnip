@@ -18,12 +18,11 @@
 
 * Successful build: `make docs`
 * History is updated: `head -n 20 docs/source/history.rst`
-* All necessary modules are included
 
 ## Distribution
 
 * Actual version: `make ver`
-* Dependencies are relevant: `setup.py`
+* All used libraries are fresh
 * Installation successful: `python3 setup.py install --user`
 * Examples from README.md work after installation
 * All utilities work after installation
@@ -40,10 +39,6 @@
 
 ## Windows
 
-* Run: `py __`
-* Build:
-  ```
-  > py win-setup.py build
-  > win-post-build.bat build\<name>
-  ```
-* Start on clear system
+* Python interpreter runs application: `py <name>`
+* Build successful
+* Application works on clear machine
