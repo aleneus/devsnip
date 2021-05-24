@@ -1,4 +1,4 @@
-.PHONY: docs
+.PHONY: docs test
 
 PACKAGE_FOLDER = __name_of_package_folder__
 LANG_FOLDER = "$(PACKAGE_FOLDER)/__name_of_lang_subfolder_"
@@ -6,39 +6,40 @@ DEMO_FOLDER = __name_of_demo_folder__
 
 help:
 	@echo "check"
-	@echo "cover"
-	@echo "notes"
+	@echo "test"
+	@echo "todo"
 	@echo "flake"
-	@echo "profile"
 	@echo "lint-e"
+	@echo "cover"
 	@echo "lint"
 	@echo "lint-demo"
 	@echo "ver"
-	@echo "upload"
 	@echo "docs"
 	@echo "po"
 	@echo "mo"
-	@echo "uml"
-	@echo "run-warn"
+	@echo "upload"
 
-check:
+	@echo "profile"
+	@echo "run-warn"
+	@echo "uml"
+
+check: test todo flake line-e
+
+test:
 	@nose2 -vvv --with-coverage
 
-cover:
-	@nose2 --with-coverage --coverage-report=html
-
-notes:
+todo:
 	@rgrep "TODO" --include="*py" --include="*md" --include="*rst" --exclude="release-checklist.md" || true
 	@rgrep "# REF" --include="*py" || true
 
 flake:
 	flake8 $(PACKAGE_FOLDER)
 
-profile:
-	python3 -m cProfile -s time ./gui
-
 lint-e:
 	pylint --disable=R,C,W $(PACKAGE_FOLDER) || true
+
+cover:
+	@nose2 --with-coverage --coverage-report=html
 
 lint:
 	pylint $(PACKAGE_FOLDER) || true
@@ -55,10 +56,6 @@ docs:
 
 ver:
 	@cat $(PACKAGE_FOLDER)/__init__.py | grep __version__
-
-upload:
-	python3 setup.py sdist
-	python3 -m twine upload --repository pypi dist/*
 
 po:
 	for f in $(PACKAGE_FOLDER)/*.py; do \
@@ -78,6 +75,13 @@ mo:
 	for f in $(LANG_FOLDER)/*.po; do \
 		msgfmt "$$f" -o "$${f%%.*}.mo"; \
 	done
+
+upload:
+	python3 setup.py sdist
+	python3 -m twine upload --repository pypi dist/*
+
+profile:
+	python3 -m cProfile -s time ./gui
 
 run-warn:
 	python3 -W all ./gui
