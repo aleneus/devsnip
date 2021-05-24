@@ -58,23 +58,10 @@ ver:
 	@cat $(PACKAGE_FOLDER)/__init__.py | grep __version__
 
 po:
-	for f in $(PACKAGE_FOLDER)/*.py; do \
-		s=$${f##*/} ; \
-		fo=$(LANG_FOLDER)/$${s%%.*}.po ; \
-		if [ -f $$fo ] ; then \
-			xgettext $$f -j --no-location -o $$fo ; \
-		else \
-			xgettext $$f --no-location -o $$fo ; \
-		fi ; \
-		if [ -f $$fo ] ; then \
-			msginit --no-translator --input=$$fo --locale=ru_RU.UTF-8 -o $$fo ; \
-		fi ; \
-	done
+	./sh/po.sh $(PACKAGE_FOLDER) $(LANG_FOLDER)
 
 mo:
-	for f in $(LANG_FOLDER)/*.po; do \
-		msgfmt "$$f" -o "$${f%%.*}.mo"; \
-	done
+	./sh/mo.sh $(LANG_FOLDER)
 
 upload:
 	python3 setup.py sdist
