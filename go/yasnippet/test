@@ -4,8 +4,8 @@
 # key: test
 # description: test function
 # --
-func Test${1:Feature}(t *testing.T) {
-	// Feature: ${2:Details}
+func Test${1:Object}_${2:Feature}(t *testing.T) {
+	// Feature: ${3:Details}
 
 	$0
 }
