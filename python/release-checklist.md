@@ -1,16 +1,17 @@
 # Python project release checklist
 
-## Test
+## Auto check
 
-* All passed: `make check`
-* Coverage >= __%: `make check`
-* All manual tests pass (`test/manual`)
+* No errors: `make check`
+* Coverage by tests >= __%
 
-## Code
+## Acceptance
 
-* No TODO notes: `make notes`
-* No flakes: `make flake`
-* No lint errors: `make lint-e`
+* All manual tests passed (`test/manual`)
+* Random working with UI: __ minutes
+
+## Code quality
+
 * Lint result >= __: `make lint`
 * Old deprecated code is removed (todo list)
 
