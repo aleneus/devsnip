@@ -1,4 +1,4 @@
-# Python project release checklist
+# Release checklist
 
 ## Auto check
 
