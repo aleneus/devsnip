@@ -6,10 +6,6 @@ DEMO_FOLDER = __name_of_demo_folder__
 
 help:
 	@echo "check"
-	@echo "test"
-	@echo "todo"
-	@echo "flake"
-	@echo "lint-e"
 	@echo "cover"
 	@echo "lint"
 	@echo "lint-demo"
@@ -23,13 +19,15 @@ help:
 	@echo "run-warn"
 	@echo "uml"
 
-check: test todo flake line-e
+check: test todo flake lint-e
 
 test:
 	@nose2 -vvv --with-coverage
 
 todo:
-	@rgrep "TODO" --include="*py" --include="*md" --include="*rst" --exclude="release-checklist.md" || true
+	@rgrep "TODO" --include="*py" || true
+	@rgrep "TODO" --include="*rst" || true
+	@rgrep "TODO" --include="*md" --exclude="release-checklist.md" || true
 	@rgrep "# REF" --include="*py" || true
 
 flake:
