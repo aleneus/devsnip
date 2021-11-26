@@ -4,4 +4,7 @@
 # key: bp
 # description: adds break point (imitation with panic)
 # --
-panic("break") // TODO: remove
+// TODO: remove
+log.Println("DEBUG: $1 =", $1)
+panic("break")
+//
