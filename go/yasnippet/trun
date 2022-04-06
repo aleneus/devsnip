@@ -5,5 +5,7 @@
 # description: add a t.Run() within test
 # --
 t.Run("${1:Scenario}", func(t *testing.T){
-	// TODO: implement
+    t.Parallel()
+
+    // TODO: implement
 })
