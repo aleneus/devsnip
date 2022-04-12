@@ -24,7 +24,7 @@
 
 * Actual version: `make ver`
 * All used libraries are fresh
-* Installation successful: `python3 setup.py install --user`
+* Installation successful: use separate virtual environement
 * Examples from README.md work after installation
 * All utilities work after installation
 * All package data are relevant
