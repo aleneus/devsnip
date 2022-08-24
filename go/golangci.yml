@@ -1,0 +1,19 @@
+linters:
+  enable-all: true
+  disable:
+    - scopelint
+    - interfacer
+    - golint
+    - maligned
+    - testpackage
+    - exhaustivestruct
+    - ifshort
+
+linters-settings:
+  govet:
+    check-shadowing: true
+    enable-all: true
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
