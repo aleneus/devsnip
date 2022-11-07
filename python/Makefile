@@ -34,6 +34,7 @@ fixme:
 
 	@rgrep "# REF" -n \
 		--include="*py" \
+		--exclude-dir=env \
 		|| true
 
 flake:
