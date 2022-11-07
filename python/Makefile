@@ -19,16 +19,22 @@ help:
 	@echo "run-warn"
 	@echo "uml"
 
-check: test todo flake lint-e
+check: test fixme flake lint-e
 
 test:
 	@nose2 -vvv --with-coverage
 
-todo:
-	@rgrep "TODO" --include="*py" --exclude-dir="env" || true
-	@rgrep "TODO" --include="*rst" || true
-	@rgrep "TODO" --include="*md" --exclude="release-checklist.md" || true
-	@rgrep "# REF" --include="*py" || true
+fixme:
+	@rgrep "TODO" -n \
+		--include="*py" \
+		--include="*rst" \
+		--include="*md" \
+		--exclude-dir=env \
+		|| true
+
+	@rgrep "# REF" -n \
+		--include="*py" \
+		|| true
 
 flake:
 	flake8 $(PACKAGE_FOLDER)
