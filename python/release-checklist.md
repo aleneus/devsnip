@@ -31,7 +31,7 @@
 
 ## Demo
 
-* All examples work: `./run-demo.sh`
+* All examples work: `./sh/run-demo.sh`
 
 ## Translation
 
