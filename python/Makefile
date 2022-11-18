@@ -30,6 +30,7 @@ fixme:
 		--include="*rst" \
 		--include="*md" \
 		--exclude-dir=env \
+		--exclude="release-checklist.md" \
 		|| true
 
 	@rgrep "# REF" -n \
