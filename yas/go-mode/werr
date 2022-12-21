@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# contributer: Aleksandr Popov <aleneus@gmail.com>
-# name: werr
-# key: werr
-# description: wrap error
-# --
-fmt.Errorf("$1: %w", err)

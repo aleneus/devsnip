@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: test
-# key: test
-# --
-TEST($1, $2) {
-    // TODO test: implement
-}
