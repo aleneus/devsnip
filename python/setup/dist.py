@@ -10,7 +10,7 @@ DESCRIPTION = "__one_sentence__"
 
 PACKAGES = ['__my_package__']
 
-KEYWORDS = "digital signal processing"
+KEYWORDS = "__keywords__"
 
 INSTALL_REQUIRES = [
     '__package__name__>=__version__',
