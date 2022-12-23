@@ -17,7 +17,7 @@ INSTALL_REQUIRES = [
 ]
 
 PACKAGE_DATA = {
-    '__packege__': [
+    '__package__': [
         '__path_1__',
         '__path_2__',
     ]
