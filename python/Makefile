@@ -26,15 +26,17 @@ test:
 
 fixme:
 	@rgrep "TODO" -n \
+		--include="*md" \
 		--include="*py" \
 		--include="*rst" \
-		--include="*md" \
+		--exclude-dir=build \
 		--exclude-dir=env \
 		--exclude="release-checklist.md" \
 		|| true
 
 	@rgrep "# REF" -n \
 		--include="*py" \
+		--exclude-dir=build \
 		--exclude-dir=env \
 		|| true
 
