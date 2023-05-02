@@ -1,13 +1,20 @@
 linters:
   enable-all: true
   disable:
+    - testpackage
+
+    # next are deprecated
+
     - scopelint
     - interfacer
     - golint
     - maligned
-    - testpackage
     - exhaustivestruct
     - ifshort
+    - structcheck
+    - varcheck
+    - nosnakecase
+    - deadcode
 
 linters-settings:
   govet:
