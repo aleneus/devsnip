@@ -1,0 +1,17 @@
+*.py[cod]
+/.coverage
+
+/build
+/dist
+*egg-info*
+
+*.log
+*.mo
+*.bak
+
+/htmlcov
+
+env/
+
+/classes.png
+/packages.png
