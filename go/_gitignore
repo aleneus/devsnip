@@ -1,0 +1,12 @@
+*.orig
+
+build/*
+
+/cover.html
+/cover.out
+.coverage
+
+*.log
+
+*.bak
+*.diff
