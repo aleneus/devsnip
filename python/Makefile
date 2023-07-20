@@ -25,7 +25,7 @@ test:
 	@nose2 -vvv --with-coverage
 
 fixme:
-	@rgrep "TODO" -n \
+	@rgrep "TODO now" -n \
 		--include="*md" \
 		--include="*py" \
 		--include="*rst" \

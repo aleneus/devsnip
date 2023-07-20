@@ -7,7 +7,7 @@ test:
 	@go test ./...
 
 fixme:
-	@rgrep -n "TODO" \
+	@rgrep -n "TODO now" \
 		--include "*.go" \
 		--include "*.md" \
 		--include "*.sh" \
@@ -16,6 +16,7 @@ fixme:
 
 	@rgrep -n "// REF" \
 		--include "*.go" \
+		--include "*.sh" \
 		|| true
 
 cover:
